@@ -95,3 +95,72 @@ header {
     height: 20px;
     width: 20px;
   }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Inclusive Sans", sans-serif;
+}
+
+button {
+  background-color: var(--orange);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-family: "Inclusive Sans";
+  font-size: 12px;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  border: var(--orange) solid;
+  color: var(--orange);
+}
+
+
+/* Cart Page */
+
+.content-wrapper {
+  margin: 0 auto;
+}
+
+.cart-content-holder {
+  margin: 12px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 12px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.cart-title {
+  grid-column: 1 / span 2;
+  font-size: 16px;
+}
+
+.cart-total {
+  grid-column: 1 / span 2;
+  font-size: 16px;
+}
+
+.checkout-button {
+  grid-column: 4 / span 1;
+  max-width: 100px;
+}
+
+
+/* Media Queries */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .content-wrapper {
+    max-width: 1400px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
