@@ -5,3 +5,28 @@ html {
 body {
   margin: 0;
 }
+
+:root {
+  --orange: #F19844;
+  --beige: #F8F3EF;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Fontversioner Inclusive Sans*/
+.inclusive-sans-regular {
+  font-family: "Inclusive Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inclusive-sans-regular-italic {
+  font-family: "Inclusive Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*Styling rubriker*/
+h1, h2, h3, h4 {
+  font-family: "Inclusive Sans", sans-serif;
+}
