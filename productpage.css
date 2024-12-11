@@ -22,22 +22,32 @@ span, p {
       gap: 10px;
 }
 
-main {
+#pp-return-button {
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    font-size: 20px;
+}
+
+#pp-main {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
 #pp-book-img {
-    border: 1px solid var(--orange);
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
     flex: 1 1 250px;
     height: 350px;
+    margin: 20px;
 }
 
 #pp-book-info {
     height: auto;
     flex: 2 1 300px;
     margin: 20px;
+    text-align: center;
 }
 
 #pp-summary {
@@ -54,15 +64,28 @@ main {
 
 #pp-amount {
     width: 50px;
+    height: 30px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
 }
 
 #pp-add-button {
-    min-width: 150px;
+    min-width: 210px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
 }
 
 /* Media Queries */
 @media only screen and (min-width: 992px) {
     #pp-content-wrapper {
       max-width: 1400px;
+    }
+
+    #pp-book-info {
+        text-align: left;
     }
   }

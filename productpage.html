@@ -13,27 +13,30 @@
 <body>
     <script src="header.js"></script>
         <div id="pp-content-wrapper">
-            <main>
+            <button type="button" name="pp-return-button" id="pp-return-button">Tillbaka</button>
+            <main id="pp-main">
             <!-- skiss-kod -->
-                <section id="pp-book-img">photo box</section>
+                <section id="pp-book-img">
+                    <img src="#" alt="Book cover image">
+                </section>
                 <section id="pp-book-info">
-                    <h2>Book title</h2>
-                    <h3>Author</h3>
-                    <p>ISBN number:</p>
-                    <p>Published in:</p>
-                    <p>Genre:</p>
+                    <h2 id="pp-title">Titel</h2>
+                    <h3 id="pp-author">Författare</h3>
+                    <p id="pp-isbn">ISBN:</p>
+                    <p id="pp-category">Kategori:</p>
+                    <h2 id="pp-price">0 SEK</h2>
                 </section>
                 <section id="pp-summary">
-                    <p>Summary...</p>
+                    <p>Beskrivning...</p>
                 </section>
                 <section id="pp-purchase">
-                    <h4>In stock/Out of stock:</h4>
+                    <h4 id="pp-in-stock">I lager</h4>
                     <input type="number" name="pp-amount" id="pp-amount" min="1" value="1">
-                    <button type="button" name="pp-add-button" id="pp-add-button">Add to cart</button>
+                    <button type="button" name="pp-add-button" id="pp-add-button">Lägg till i varukorg</button>
                 </section>
             </main>
         </div>
 
-    <script src="script.js"></script>
+    <script src="productpage.js"></script>
 </body>
 </html>
