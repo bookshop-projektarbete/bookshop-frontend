@@ -174,8 +174,15 @@ button:hover {
   grid-row: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 12px;
+  column-gap: 16px;
   row-gap: 24px;
+}
+
+.grid-content {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-image-holder {
@@ -204,28 +211,22 @@ button:hover {
 .item-quantity {
   position: relative;
   grid-column: 2 / span 1;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
 }
 
 .item-quantity::before {
   content: "";
   background-image: url(./icons/minus-button.svg);
   background-size: cover;
-  /* Ensure the background image is sized correctly */
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .item-quantity::after {
   content: "";
   background-image: url(./icons/plus-button.svg);
   background-size: cover;
-  /* Ensure the background image is sized correctly */
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .item-info {

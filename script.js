@@ -49,14 +49,14 @@ const renderCartItems = () => {
         itemImage.alt = cover_image.alt
 
         const itemQuantity = document.createElement("div");
-        itemQuantity.className = "item-quantity";
+        itemQuantity.classList.add("grid-content", "item-quantity");
         itemQuantity.innerHTML = `<p>1</p>`
 
         const itemInfo = document.createElement("div");
-        itemInfo.className = "item-info";
+        itemInfo.classList.add("grid-content", "item-info");
         itemInfo.innerHTML = `<ul><li>${title}</li><li>${author}</li><li>${isbn}</li></ul>`;
         const itemPrice = document.createElement("div");
-        itemPrice.className = "item-price";
+        itemPrice.classList.add("grid-content", "item-price");
         itemPrice.innerHTML = `<p>${price} kr</p>`
 
 
