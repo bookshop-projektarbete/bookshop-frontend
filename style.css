@@ -92,7 +92,7 @@ img {
   color: #981E29;
 }
 
-.book-button {
+.purchase-button {
   cursor: pointer;
   height: 41px;
   width: 41px;
@@ -101,7 +101,7 @@ img {
   background-color: var(--orange);
 }
 
-.book-button:hover {
+.purchase-button:hover {
   filter: brightness(0.9);
 }
 
