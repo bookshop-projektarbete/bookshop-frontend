@@ -4,6 +4,9 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: var(--beige);
+  height: 100%; /*Krävs för footerns position*/
 }
 
 :root {
@@ -29,10 +32,163 @@ body {
 /*Styling rubriker*/
 h1, h2, h3, h4 {
   font-family: "Inclusive Sans", sans-serif;
+  font-weight: normal;
 }
 
+/*Styling header*/
+header {
+  background-color: var(--orange);
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
 
+  #logo-boklusen {
+    height: 12vh;
+    margin-left: 60px;
+  }
 
+  #logo-cart {
+    height: 4vh;
+    margin-right: 60px;
+  }
+
+/*Styling footer*/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--orange);
+  height: 20vh;
+  padding: 20px;
+  padding-left: 30px;
+  margin-bottom: -20vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  #footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #kundservice, #om-oss {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer li {
+    list-style: none;
+    margin-left: -40px;
+  }
+
+  footer h3 {
+    margin-bottom: -5px;
+  }
+
+  #logo-footer {
+    height: 10vh;
+    padding-right: 50px;
+  }
+
+/*Styling search bar for home page*/
+#searchbar-container {
+    position: relative;
+    width: 90vw;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+}
+
+  #main-searchbar {
+    width: 100%;
+    height: 45px;
+    padding: 10px 50px 10px 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    font-size: 16px;
+  }
+
+  #main-searchbar:focus {
+    border: 2px solid var(--orange);
+    outline: none;
+  }
+
+  #main-searchbutton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  #main-searchbutton img {
+    height: 20px;
+    width: 20px;
+  }
+
+button {
+  background-color: var(--orange);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-family: "Inclusive Sans";
+  font-size: 12px;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  border: var(--orange) solid;
+  color: var(--orange);
+}
+
+/* Cart Page */
+
+.content-wrapper {
+  margin: 0 auto;
+}
+
+.cart-content-holder {
+  margin: 12px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 12px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.cart-title {
+  grid-column: 1 / span 2;
+  font-size: 16px;
+}
+
+.cart-total {
+  grid-column: 1 / span 2;
+  font-size: 16px;
+}
+
+.checkout-button {
+  grid-column: 4 / span 1;
+  max-width: 100px;
+}
 
 /* Product view for home page */
 .card-container {
@@ -108,3 +264,15 @@ img {
 .icon {
   color: #FFFFFF;
 }
+
+/* Media Queries */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .content-wrapper {
+    max-width: 1400px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
