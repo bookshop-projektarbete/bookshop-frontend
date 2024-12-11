@@ -1,0 +1,68 @@
+:root {
+    --orange: #F19844;
+    --beige: #F8F3EF;
+  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* PP-css */
+
+span, p {
+    font-family: "Inclusive Sans", sans-serif;
+}
+
+#pp-content-wrapper {
+      margin: 0 auto;
+      max-width: 700px;
+      padding: 15px;
+      border: 1px solid var(--orange);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#pp-book-img {
+    border: 1px solid var(--orange);
+    flex: 1 1 250px;
+    height: 350px;
+}
+
+#pp-book-info {
+    height: auto;
+    flex: 2 1 300px;
+    margin: 20px;
+}
+
+#pp-summary {
+    width: 100%;
+    height: auto;
+    margin: 5px 20px;
+}
+
+#pp-purchase {
+    height: auto;
+    flex: 2 1 250px;
+    margin: 5px 20px;
+}
+
+#pp-amount {
+    width: 50px;
+}
+
+#pp-add-button {
+    min-width: 150px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 992px) {
+    #pp-content-wrapper {
+      max-width: 1400px;
+    }
+  }

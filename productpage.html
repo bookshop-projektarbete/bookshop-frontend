@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="productpage.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
     </style>
@@ -14,19 +15,21 @@
         <div id="pp-content-wrapper">
             <main>
             <!-- skiss-kod -->
-                <section>photo box</section>
-                <section>
+                <section id="pp-book-img">photo box</section>
+                <section id="pp-book-info">
                     <h2>Book title</h2>
                     <h3>Author</h3>
-                    <h3>ISBN number:</h3>
-                    <h3>Published in:</h3>
-                    <h3>Genre:</h3>
+                    <p>ISBN number:</p>
+                    <p>Published in:</p>
+                    <p>Genre:</p>
                 </section>
-                <section>
-                    <h4>In stock/Out of stock</h4>
-                    <span>Amount: </span>
-                    <input type="number" name="pp-amount" id="pp-amount" min="1">
-                    <button type="button" name="add-to-cart" id="pp-add-to-cart">Add to cart</button>
+                <section id="pp-summary">
+                    <p>Summary...</p>
+                </section>
+                <section id="pp-purchase">
+                    <h4>In stock/Out of stock:</h4>
+                    <input type="number" name="pp-amount" id="pp-amount" min="1" value="1">
+                    <button type="button" name="pp-add-button" id="pp-add-button">Add to cart</button>
                 </section>
             </main>
         </div>
