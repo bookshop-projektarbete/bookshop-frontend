@@ -152,7 +152,9 @@ const renderCartItems = () => {
     renderTotalPrice();
 }
 
-renderCartItems();
+if (cartItemHolder) {
+    renderCartItems();
+}
 
 /* Product view for home page */
 const bookCardContainer = document.getElementById('card-container');
