@@ -1,19 +1,22 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--beige);
-  height: 100%; /*Krävs för footerns position*/
-}
-
 :root {
   --orange: #F19844;
   --beige: #F8F3EF;
 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#main-container {
+  flex: 1;
 }
 
 /*Fontversioner Inclusive Sans*/
@@ -58,19 +61,23 @@ header {
 
 /*Styling footer*/
 footer {
-  position: absolute;
-  bottom: 0;
+  flex-shrink: 0;
   width: 100%;
+  height: auto;
+  box-sizing: border-box;
   background-color: var(--orange);
-  height: 20vh;
-  padding: 20px;
-  padding-left: 30px;
-  margin-bottom: -20vh;
+  padding: 30px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
+
+  #footer-left, #footer-right {
+    width: 50%;
+    box-sizing: border-box;
+  }
 
   #footer-left {
     display: flex;
