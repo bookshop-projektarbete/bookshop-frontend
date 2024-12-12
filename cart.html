@@ -12,14 +12,17 @@
 </head>
 
 <body>
+    <!--To get header from header.js, has to load before header-->
+    <script src="header.js"></script>
     <div class="content-wrapper">
-        <main class="cart-content-holder">
+        <main class="main-content-holder cart">
             <h2 class="cart-title">Min varukorg</h2>
-            <section class="cart-item-holder"></section>
-            <h2 class="cart-total">Totalpris:</h2>
+            <section id="cart-items" class="cart-items-holder"></section>
+            <h2 id="cart-total" class="cart-total">Totalpris:</h2>
             <button class="checkout-button">Betala</button>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
