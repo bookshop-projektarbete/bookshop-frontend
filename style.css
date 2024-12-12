@@ -190,6 +190,14 @@ button:hover {
   max-width: 100px;
 }
 
+/* Loader */
+.loader {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Product view for home page */
 .card-container {
   margin: 12px 0;
