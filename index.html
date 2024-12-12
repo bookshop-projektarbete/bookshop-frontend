@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Boklusen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
   </style>
 </head>
 <body>
+
   <!--To get header from header.js, has to load before header-->
   <script src="header.js"></script>
 
@@ -19,8 +21,13 @@
     <button id="main-searchbutton">
         <img src="icons/search.svg" alt="Sök">
     </button>
-</div>
+  </div>
 
+  <!-- Product view for home page -->
+  <div id="card-container" class="card-container"></div>
+  
+  <!--To get footer from footer.js-->
+  <script src="footer.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -4,7 +4,10 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
   background-color: var(--beige);
+  height: 100%;
+  /*Krävs för footerns position*/
 }
 
 :root {
@@ -35,6 +38,7 @@ h4,
 p,
 li {
   font-family: "Inclusive Sans", sans-serif;
+  font-weight: normal;
 }
 
 p,
@@ -46,9 +50,11 @@ li {
 header {
   background-color: var(--orange);
   height: 20vh;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 10px;
 }
 
 #logo-boklusen {
@@ -61,7 +67,49 @@ header {
   margin-right: 60px;
 }
 
-/*Styling search bar for home page */
+/*Styling footer*/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--orange);
+  height: 20vh;
+  padding: 20px;
+  padding-left: 30px;
+  margin-bottom: -20vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#kundservice,
+#om-oss {
+  display: flex;
+  flex-direction: column;
+}
+
+footer li {
+  list-style: none;
+  margin-left: -40px;
+}
+
+footer h3 {
+  margin-bottom: -5px;
+}
+
+#logo-footer {
+  height: 10vh;
+  padding-right: 50px;
+}
+
+/*Styling search bar for home page*/
 #searchbar-container {
   position: relative;
   width: 90vw;
@@ -106,13 +154,6 @@ header {
   width: 20px;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Inclusive Sans", sans-serif;
-}
-
 button {
   background-color: var(--orange);
   border-radius: 8px;
@@ -129,7 +170,6 @@ button:hover {
   border: var(--orange) solid;
   color: var(--orange);
 }
-
 
 /* Cart Page */
 
@@ -233,6 +273,82 @@ button:hover {
 
 .item-price {
   grid-column: 4 / span 1;
+}
+
+
+/* Product view for home page */
+.card-container {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.book-card {
+  width: 183px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  padding-bottom: 12px;
+}
+
+.book-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.img-wrapper {
+  padding: 10px;
+}
+
+img {
+  width: 163px;
+  border-radius: 2px 2px 0 0;
+}
+
+.book-title,
+.book-author {
+  font-weight: normal;
+}
+
+.book-title {
+  margin: 5px 0 7px 0;
+  font-size: 16px;
+}
+
+.book-author {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.book-purchase-wrapper {
+  padding: 0 12px 0 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-price {
+  font-size: 20px;
+  color: #981E29;
+}
+
+.purchase-button {
+  cursor: pointer;
+  height: 41px;
+  width: 41px;
+  border: none;
+  border-radius: 34px;
+  background-color: var(--orange);
+}
+
+.purchase-button:hover {
+  filter: brightness(0.9);
+}
+
+.icon {
+  color: #FFFFFF;
 }
 
 /* Media Queries */
