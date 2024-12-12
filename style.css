@@ -192,20 +192,15 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Adjust this value to fit your layout */
   overflow: hidden;
-  /* Prevents the image from overflowing its container */
 }
 
 .item-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
-  /* Ensures the image covers the area */
   object-position: top;
-  /* Align the image to the top */
   aspect-ratio: 1 / 1;
-  /* Maintain a 1:1 aspect ratio */
 }
 
 .item-quantity {
@@ -213,24 +208,14 @@ button:hover {
   grid-column: 2 / span 1;
 }
 
-.item-quantity::before {
-  content: "";
-  background-image: url(./icons/minus-button.svg);
-  background-size: cover;
-  width: 24px;
-  height: 24px;
-}
-
-.item-quantity::after {
-  content: "";
-  background-image: url(./icons/plus-button.svg);
-  background-size: cover;
+.quantity-button {
   width: 24px;
   height: 24px;
 }
 
 .item-info {
   grid-column: 3 / span 1;
+  justify-content: left;
 }
 
 .item-info ul {
@@ -239,6 +224,11 @@ button:hover {
 
 .item-info li {
   list-style: none;
+  padding-bottom: 6px;
+}
+
+.text-small {
+  font-size: 8px;
 }
 
 .item-price {
