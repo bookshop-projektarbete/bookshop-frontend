@@ -16,7 +16,6 @@ span, p {
       margin: 0 auto;
       max-width: 700px;
       padding: 15px;
-      border: 1px solid var(--orange);
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -36,9 +35,14 @@ span, p {
     gap: 10px;
 }
 
+#pp-img {
+    height: auto;
+    margin: 0px auto;
+}
+
 #pp-book-img {
-    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
-    flex: 1 1 250px;
+    box-shadow: 5px 5px 4px rgba(152, 152, 152, 0.4);
+    flex: 1 1 260px;
     height: 350px;
     margin: 20px;
 }
