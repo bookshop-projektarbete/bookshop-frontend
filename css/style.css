@@ -5,7 +5,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -83,16 +84,18 @@ footer {
   align-items: center;
   overflow: hidden;
 }
-  #footer-left, #footer-right {
-    width: 50%;
-    box-sizing: border-box;
-  }
 
-  #footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+#footer-left,
+#footer-right {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 #kundservice,
 #om-oss {
@@ -179,7 +182,7 @@ button:hover {
 /* Cart Page */
 
 .content-wrapper {
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .main-content-holder {
@@ -278,6 +281,11 @@ button:hover {
 
 .item-price {
   grid-column: 4 / span 1;
+}
+
+.empty-message {
+  grid-column: 1 / span 2;
+  justify-content: left;
 }
 
 
