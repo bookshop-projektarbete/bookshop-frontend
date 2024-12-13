@@ -214,12 +214,11 @@ button:hover {
   max-width: 100px;
 }
 
-<<<<<<< HEAD:style.css
 /* Loader */
 .loader {
   z-index: 10;
   display: flex;
-=======
+
 .cart-items-holder {
   grid-column: span 4;
   grid-row: 2;
@@ -232,13 +231,12 @@ button:hover {
 .grid-content {
   display: flex;
   gap: 12px;
->>>>>>> main:css/style.css
+
   justify-content: center;
   align-items: center;
 }
 
-<<<<<<< HEAD:style.css
-=======
+
 .item-image-holder {
   grid-column: 1 / span 1;
   max-width: 100%;
@@ -290,7 +288,6 @@ button:hover {
 }
 
 
->>>>>>> main:css/style.css
 /* Product view for home page */
 .card-container {
   margin: 12px 0;
