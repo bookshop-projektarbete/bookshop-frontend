@@ -273,6 +273,11 @@ img {
   color: #FFFFFF;
 }
 
+/* Hidden */
+.hidden {
+  display: none;
+}
+
 /* Media Queries */
 
 /* Large devices (laptops/desktops, 992px and up) */

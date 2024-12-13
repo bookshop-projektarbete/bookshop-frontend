@@ -1,6 +1,16 @@
+const loader = document.querySelector('.loader');
+const bookCardContainer = document.getElementById('card-container');
 
 /* Product view for home page */
-const bookCardContainer = document.getElementById('card-container');
+const showLoader = () => {
+  loader.classList.remove('hidden');
+  bookCardContainer.classList.add('hidden');
+}
+
+const hideLoader = () => {
+  loader.classList.add('hidden');
+  bookCardContainer.classList.remove('hidden');
+};
 
 const createBookCard = (book) => {
   // Main container
@@ -57,6 +67,7 @@ const createBookCard = (book) => {
 // Fetch data from API and add data to book cards
 const fetchBooks = async () => {
   try {
+    showLoader();
     const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
     const books = await response.json();
     books.forEach(book => {
@@ -65,6 +76,8 @@ const fetchBooks = async () => {
   } catch (error) {
     console.error('Failed to fetch books. Please check your API or network connection.', error);
     bookCardContainer.innerHTML = '<p>Det gick inte att ladda böckerna. Försök igen senare.</p>';
+  } finally {
+    hideLoader();
   }
 }
 
