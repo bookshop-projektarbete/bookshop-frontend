@@ -1,3 +1,4 @@
+//Get elements
 const cartItemHolder = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total")
 console.log('cartTotal:', cartTotal)
@@ -65,8 +66,7 @@ const cartItems = [{
 }
 ];
 
-console.log(cartItems);
-
+//Array of all unique isbns in the cart, used to avoid displaying dup
 const uniqueCartItems = [
     ...cartItems.filter((book, index, cartItems) =>
         index === cartItems.findIndex((currentCartItem) => (
@@ -228,4 +228,4 @@ const fetchBooks = async () => {
 }
 
 // On Load
-fetchBooks();
+// fetchBooks();
