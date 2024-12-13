@@ -1,0 +1,95 @@
+:root {
+    --orange: #F19844;
+    --beige: #F8F3EF;
+  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* PP-css */
+
+span, p {
+    font-family: "Inclusive Sans", sans-serif;
+}
+
+#pp-content-wrapper {
+      margin: 0 auto;
+      max-width: 700px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+
+#pp-return-button {
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    font-size: 20px;
+}
+
+#pp-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#pp-img {
+    height: auto;
+    margin: 0px auto;
+}
+
+#pp-book-img {
+    box-shadow: 5px 5px 4px rgba(152, 152, 152, 0.4);
+    flex: 1 1 260px;
+    height: 350px;
+    margin: 20px;
+}
+
+#pp-book-info {
+    height: auto;
+    flex: 2 1 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+#pp-summary {
+    width: 100%;
+    height: auto;
+    margin: 5px 20px;
+}
+
+#pp-purchase {
+    height: auto;
+    flex: 2 1 250px;
+    margin: 5px 20px;
+}
+
+#pp-amount {
+    width: 50px;
+    height: 30px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#pp-add-button {
+    min-width: 210px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+}
+
+/* Media Queries */
+@media only screen and (min-width: 992px) {
+    #pp-content-wrapper {
+      max-width: 1400px;
+    }
+
+    #pp-book-info {
+        text-align: left;
+    }
+  }
