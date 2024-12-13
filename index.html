@@ -6,6 +6,7 @@
   <title>Boklusen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/books.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
   </style>
@@ -22,15 +23,19 @@
     <div id="searchbar-container">
       <input type="search" id="main-searchbar">
       <button id="main-searchbutton">
-          <img src="icons/search.svg" alt="Sök">
+        <img src="icons/search.svg" alt="Sök">
       </button>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader hidden">
+      <img src="./icons/book-loader.gif" alt="Book Loading Animation">
     </div>
 
     <!-- Product view for home page -->
     <div id="card-container" class="card-container"></div>
-    
-  </div>
 
+  </div>
   <!--To get footer from footer.js-->
   <script src="footer.js"></script>
   <script src="script.js"></script>

@@ -214,6 +214,11 @@ button:hover {
   max-width: 100px;
 }
 
+/* Loader */
+.loader {
+  z-index: 10;
+  display: flex;
+
 .cart-items-holder {
   grid-column: span 4;
   grid-row: 2;
@@ -226,9 +231,11 @@ button:hover {
 .grid-content {
   display: flex;
   gap: 12px;
+
   justify-content: center;
   align-items: center;
 }
+
 
 .item-image-holder {
   grid-column: 1 / span 1;
@@ -354,6 +361,11 @@ img {
 
 .icon {
   color: #FFFFFF;
+}
+
+/* Hidden */
+.hidden {
+  display: none;
 }
 
 /* Media Queries */
