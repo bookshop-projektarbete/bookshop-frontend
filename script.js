@@ -154,6 +154,8 @@ const renderCartItems = () => {
 
 if (cartItemHolder) {
     renderCartItems();
+} else {
+    console.log('cart-items element not found on this page.');
 }
 
 /* Product view for home page */
