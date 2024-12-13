@@ -41,9 +41,10 @@ span, p {
 }
 
 #pp-book-img {
-    box-shadow: 5px 5px 4px rgba(152, 152, 152, 0.4);
+    box-shadow: 10px 8px 6px rgba(152, 152, 152, 0.4);
     flex: 1 1 260px;
     height: 350px;
+    width: auto;
     margin: 20px;
 }
 
