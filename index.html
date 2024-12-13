@@ -15,17 +15,22 @@
   <!--To get header from header.js, has to load before header-->
   <script src="header.js"></script>
 
-  <!--Search bar for home page-->
-  <div id="searchbar-container">
-    <input type="search" id="main-searchbar">
-    <button id="main-searchbutton">
-        <img src="icons/search.svg" alt="Sök">
-    </button>
+  <!--Main container for all content-->
+  <div id="main-container">
+
+    <!--Search bar for home page-->
+    <div id="searchbar-container">
+      <input type="search" id="main-searchbar">
+      <button id="main-searchbutton">
+          <img src="icons/search.svg" alt="Sök">
+      </button>
+    </div>
+
+    <!-- Product view for home page -->
+    <div id="card-container" class="card-container"></div>
+    
   </div>
 
-  <!-- Product view for home page -->
-  <div id="card-container" class="card-container"></div>
-  
   <!--To get footer from footer.js-->
   <script src="footer.js"></script>
   <script src="script.js"></script>
