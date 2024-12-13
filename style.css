@@ -1,23 +1,20 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--beige);
+  height: 100%;
+  /*Krävs för footerns position*/
+}
+
 :root {
   --orange: #F19844;
   --beige: #F8F3EF;
 
   font-family: Arial, Helvetica, sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: var(--beige);
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-#main-container {
-  flex: 1;
 }
 
 /*Fontversioner Inclusive Sans*/
@@ -37,16 +34,9 @@ body {
 h1,
 h2,
 h3,
-h4,
-p,
-li {
+h4 {
   font-family: "Inclusive Sans", sans-serif;
   font-weight: normal;
-}
-
-p,
-li {
-  font-size: 12px;
 }
 
 /*Styling header*/
@@ -72,23 +62,18 @@ header {
 
 /*Styling footer*/
 footer {
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: auto;
-  box-sizing: border-box;
   background-color: var(--orange);
-  padding: 30px;
+  height: 20vh;
+  padding: 20px;
+  padding-left: 30px;
+  margin-bottom: -20vh;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-}
-
-#footer-left,
-#footer-right {
-  width: 50%;
-  box-sizing: border-box;
 }
 
 #footer-left {
@@ -120,7 +105,7 @@ footer h3 {
 /*Styling search bar for home page*/
 #searchbar-container {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   margin: 25px auto;
   display: flex;
   align-items: center;
@@ -182,198 +167,32 @@ button:hover {
 /* Cart Page */
 
 .content-wrapper {
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 
-.main-content-holder {
-  margin: 24px 12px;
+.cart-content-holder {
+  margin: 12px;
   padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 12px;
   background-color: white;
   border-radius: 4px;
 }
 
-.cart {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 12px;
-  row-gap: 18px;
-}
-
 .cart-title {
   grid-column: 1 / span 2;
-  grid-row: 1;
   font-size: 16px;
 }
 
 .cart-total {
   grid-column: 1 / span 2;
-  grid-row: 3;
   font-size: 16px;
 }
 
 .checkout-button {
   grid-column: 4 / span 1;
-  grid-row: 3;
   max-width: 100px;
-}
-
-/* Loader */
-.loader {
-  z-index: 10;
-  display: flex;
-
-.cart-items-holder {
-  grid-column: span 4;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 16px;
-  row-gap: 24px;
-}
-
-.grid-content {
-  display: flex;
-  gap: 12px;
-
-  justify-content: center;
-  align-items: center;
-}
-
-
-.item-image-holder {
-  grid-column: 1 / span 1;
-  max-width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.item-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  object-position: top;
-  aspect-ratio: 1 / 1;
-}
-
-.item-quantity {
-  position: relative;
-  grid-column: 2 / span 1;
-}
-
-.quantity-button {
-  width: 24px;
-  height: 24px;
-}
-
-.item-info {
-  grid-column: 3 / span 1;
-  justify-content: left;
-}
-
-.item-info ul {
-  padding: 0;
-}
-
-.item-info li {
-  list-style: none;
-  padding-bottom: 6px;
-}
-
-.text-small {
-  font-size: 8px;
-}
-
-.item-price {
-  grid-column: 4 / span 1;
-}
-
-.empty-message {
-  grid-column: 1 / span 2;
-  justify-content: left;
-}
-
-
-/* Product view for home page */
-.card-container {
-  margin: 12px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.book-card {
-  width: 183px;
-  text-align: center;
-  border-radius: 4px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-  padding-bottom: 12px;
-}
-
-.book-card:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
-
-.img-wrapper {
-  padding: 10px;
-}
-
-img {
-  width: 163px;
-  border-radius: 2px 2px 0 0;
-}
-
-.book-title,
-.book-author {
-  font-weight: normal;
-}
-
-.book-title {
-  margin: 5px 0 7px 0;
-  font-size: 16px;
-}
-
-.book-author {
-  margin-bottom: 15px;
-  font-size: 12px;
-}
-
-.book-purchase-wrapper {
-  padding: 0 12px 0 19px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.book-price {
-  font-size: 20px;
-  color: #981E29;
-}
-
-.purchase-button {
-  cursor: pointer;
-  height: 41px;
-  width: 41px;
-  border: none;
-  border-radius: 34px;
-  background-color: var(--orange);
-}
-
-.purchase-button:hover {
-  filter: brightness(0.9);
-}
-
-.icon {
-  color: #FFFFFF;
-}
-
-/* Hidden */
-.hidden {
-  display: none;
 }
 
 /* Media Queries */
