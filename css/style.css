@@ -117,7 +117,7 @@ footer h3 {
 /*Styling search bar for home page*/
 #searchbar-container {
   position: relative;
-  width: 90vw;
+  width: 80vw;
   margin: 25px auto;
   display: flex;
   align-items: center;
