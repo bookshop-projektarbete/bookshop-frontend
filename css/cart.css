@@ -1,0 +1,126 @@
+.main-content-holder {
+    margin: 24px 12px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.cart-content-holder {
+    margin: 12px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.cart-items-holder {
+    grid-column: span 4;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    row-gap: 24px;
+}
+
+.grid-content {
+    display: flex;
+    gap: 12px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.item-image-holder {
+    grid-column: 1 / span 1;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.item-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: top;
+    aspect-ratio: 1 / 1;
+}
+
+.item-quantity {
+    position: relative;
+    grid-column: 2 / span 1;
+}
+
+.quantity-button {
+    width: 24px;
+    height: 24px;
+}
+
+.item-info {
+    grid-column: 3 / span 1;
+    justify-content: left;
+}
+
+.item-info ul {
+    padding: 0;
+}
+
+.item-info li {
+    list-style: none;
+    padding-bottom: 6px;
+}
+
+.text-small {
+    font-size: 8px;
+}
+
+.item-price {
+    grid-column: 4 / span 1;
+}
+
+.empty-message {
+    grid-column: 1 / span 2;
+    justify-content: left;
+}
+
+.cart {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    row-gap: 18px;
+}
+
+.cart-title {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    font-size: 16px;
+}
+
+.cart-total {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    font-size: 16px;
+}
+
+.checkout-button {
+    grid-column: 4 / span 1;
+    grid-row: 3;
+    max-width: 100px;
+}
+
+/* Media Queries */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content-wrapper {
+        max-width: 1400px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

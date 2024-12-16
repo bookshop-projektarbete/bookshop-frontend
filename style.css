@@ -164,35 +164,8 @@ button:hover {
   color: var(--orange);
 }
 
-/* Cart Page */
-
 .content-wrapper {
   margin: 0 auto;
-}
-
-.cart-content-holder {
-  margin: 12px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 12px;
-  background-color: white;
-  border-radius: 4px;
-}
-
-.cart-title {
-  grid-column: 1 / span 2;
-  font-size: 16px;
-}
-
-.cart-total {
-  grid-column: 1 / span 2;
-  font-size: 16px;
-}
-
-.checkout-button {
-  grid-column: 4 / span 1;
-  max-width: 100px;
 }
 
 /* Media Queries */
