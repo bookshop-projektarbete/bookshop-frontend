@@ -1,0 +1,11 @@
+/* Submit button */
+.btn-submit {
+    background-color: #F19844;
+    border-color: #F19844;
+    color: white; /* Ensure the text is visible */
+}
+
+.btn-submit:hover {
+    background-color: #e0883b; /* Darker shade for hover effect */
+    border-color: #e0883b;
+}
