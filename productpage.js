@@ -42,3 +42,7 @@ async function displayBookData(id) {
 // Display book info on page (with example id for now)
 displayBookData("6756f2bf23581d968ded9e4c");
 
+const addToCartBtn = document.getElementById('pp-add-button').addEventListener ('click', function(event){
+    event.preventDefault();
+    document.getElementById('added-message').style.display = "inline-block";
+});

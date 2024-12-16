@@ -84,6 +84,11 @@ span, p {
     box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
 }
 
+#added-message {
+    margin-left: 15px;
+}
+
+
 /* Media Queries */
 @media only screen and (min-width: 992px) {
     #pp-content-wrapper {
