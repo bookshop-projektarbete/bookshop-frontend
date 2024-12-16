@@ -1,4 +1,4 @@
-//Template för att länka till footer. I html-filerna: <script src="footer.js">
+//Template för att länka till footer. I html-filerna: <script src="scripts/footer.js">
 const footerTemplate = document.createElement('template');
 
 footerTemplate.innerHTML=`

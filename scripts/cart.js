@@ -226,5 +226,3 @@ const renderCartItems = () => {
 }
 
 renderCartItems();
-
-
