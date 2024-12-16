@@ -64,7 +64,18 @@ span, p {
 #pp-purchase {
     height: auto;
     flex: 2 1 250px;
-    margin: 5px 20px;
+    margin: 0px 20px;
+}
+
+#pp-in-stock {
+    width: 260px;
+    height: auto;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 4px rgba(152, 152, 152, 0.4);
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    text-align: center;
 }
 
 #pp-amount {
