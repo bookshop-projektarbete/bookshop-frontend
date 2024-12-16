@@ -42,7 +42,22 @@ async function displayBookData(id) {
 // Display book info on page (with example id for now)
 displayBookData("6756f2bf23581d968ded9e4c");
 
-const addToCartBtn = document.getElementById('pp-add-button').addEventListener ('click', function(event){
+const addToCartBtn = document.getElementById('pp-add-button');
+
+// Display added to cart-message, 5s with fade out
+addToCartBtn.addEventListener ('click', function(event){
     event.preventDefault();
-    document.getElementById('added-message').style.display = "inline-block";
+    const addedMessage = document.getElementById('added-message');
+    addedMessage.style.opacity = "1";
+    addedMessage.style.display = "inline-block"
+
+    setTimeout(() => {
+        addedMessage.style.transition = "opacity 0.5s ease-out";
+        addedMessage.style.opacity = "0";
+
+        setTimeout(() => {
+            addedMessage.style.display = "none";
+        }, "500");
+        }, "3000");    
 });
+
