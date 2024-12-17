@@ -1,11 +1,120 @@
-/* Submit button */
-.btn-submit {
-    background-color: #F19844;
-    border-color: #F19844;
-    color: white; /* Ensure the text is visible */
+/* contact.css */
+
+/* General styles */
+body {
+    font-family: 'Inclusive Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.btn-submit:hover {
-    background-color: #e0883b; /* Darker shade for hover effect */
-    border-color: #e0883b;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-heading {
+    font-size: 30px;
+    text-align: center;
+}
+
+#contact-paragraph {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-form .form-control, .contact-form .form-select {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form .form-control:focus, .contact-form .form-select:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.contact-form .btn-submit {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: black;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Contact info styles */
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#contact-info-address, #contact-info-details, #contact-info-email, #contact-info-phone {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+    .contact-form {
+        max-width: 90%;
+    }
+}
+
+/* Small Desktops (1024px to 1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+    .contact-form {
+        max-width: 80%;
+    }
+}
+
+/* Large Desktops (above 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+    .contact-form {
+        max-width: 70%;
+    }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .contact-form {
+        width: 100%;
+    }
 }
