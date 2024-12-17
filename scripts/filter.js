@@ -149,7 +149,7 @@ async function createGenreFilter() {
         filterInput.setAttribute('type', 'checkbox');
         filterInput.setAttribute('id', value);
         filterInput.setAttribute('class', 'specificGenre');
-        filterInput.setAttribute('class', 'filterInput');
+        filterInput.classList.add('filterInput');
         filterInput.setAttribute('name', 'genreChoice');
         filterInput.setAttribute('value', value);
         filterInput.checked = true;

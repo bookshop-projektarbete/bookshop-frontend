@@ -9,14 +9,14 @@
     <title>Boklusen</title>
 </head>
 <body>
-    <form class="dropdown" id="filterDropDown">
-        <button type="button" class="dropbtn" onclick="dropdownFunction('dropdownHeaders')">Filter</button>
+    <form class="dropdown" id="filterDropdown">
+        <button type="button" class="dropbtn" id="filterBtn" onclick="dropdownFunction('dropdownHeaders')">Filter</button>
         <div class="dropdown-content" id="dropdownHeaders">
 
             <button type="button" class="dropbtn" onclick="dropdownFunction('genreDropdown')">Genre</button>
             <div class="dropdown-content" id="genreDropdown">
                 <button type="button" id="checkAllBtn">select all</button>
-                <button type="reset" id="resetBtn">deselect all</button><br>
+                <button type="button" id="resetBtn">deselect all</button><br>
             </div><br>
 
             <button type="button" class="dropbtn" onclick="dropdownFunction('authorDropdown')">Författare</button>
@@ -53,7 +53,7 @@
 
                 <input type="radio" class="filterInput" id="highest" name="priceChoice" value="highest">
                 <label for="highest" class="filterLabel">Högt-lågt</label><br>
-            </div><br>
+            </div><br><br>
 
             <button type="button" id="searchBtn" onclick="searchFunction()">Sök</button><br><br>
             <button type="reset" id="resetAllBtn">Rensa alla filter</button>
