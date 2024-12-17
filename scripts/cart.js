@@ -190,6 +190,12 @@ const renderCartItems = () => {
     //Clear the cartItemHolder container
     cartItemHolder.innerHTML = "";
 
+    //Remove checkoutButton if visible
+    const existingCheckoutButton = document.querySelector(".checkout-button");
+    if (existingCheckoutButton) {
+        existingCheckoutButton.remove();
+    }
+
     // If no items are in the cart, display message
     if (cartItems.length === 0) {
         const emptyCartMsg = document.createElement("p");
@@ -198,7 +204,14 @@ const renderCartItems = () => {
 
         cartItemHolder.appendChild(emptyCartMsg);
         // If there are items in the cart, render the items, the total price and checkout button
+
+        //Hide cartTotal when cart is empty
+        cartTotal.style.display = "none";
+
     } else {
+
+        //Show cartTotal when cart has items
+        cartTotal.style.display = "block";
 
         //Array of all unique isbns in the cart, used to avoid displaying duplicates
         const uniqueCartItems = [
@@ -218,7 +231,7 @@ const renderCartItems = () => {
 
         //Render the total price
         renderTotalPrice();
-        // Create and append the checkout
+        // Create and append the checkoutButton
         const checkoutButton = createCheckoutButton();
         mainContentHolder.appendChild(checkoutButton);
 
