@@ -9,6 +9,7 @@
     <title>Boklusen</title>
 </head>
 <body>
+    <script src="scripts/header.js"></script>
     <form class="dropdown" id="filterDropdown">
         <button type="button" class="dropbtn" id="filterBtn" onclick="dropdownFunction('dropdownHeaders')">Filter</button>
         <div class="dropdown-content" id="dropdownHeaders">
@@ -55,10 +56,11 @@
                 <label for="highest" class="filterLabel">Högt-lågt</label><br>
             </div><br><br>
 
-            <button type="button" id="searchBtn" onclick="searchFunction()">Sök</button><br><br>
-            <button type="reset" id="resetAllBtn">Rensa alla filter</button>
+            <button type="reset" id="resetAllBtn">Rensa alla filter</button><br>
+            <button type="button" id="searchBtn" onclick="searchFunction()">Sök</button>
         </div>
     </form>
     <script src="scripts/filter.js"></script>
+    <script src="scripts/footer.js"></script>
 </body>
 </html>
