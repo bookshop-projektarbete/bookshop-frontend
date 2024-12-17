@@ -21,38 +21,38 @@
 
             <button type="button" class="dropbtn" onclick="dropdownFunction('authorDropdown')">Författare</button>
             <div class="dropdown-content" id="authorDropdown">
-                <input type="radio" id="allAuthors" name="authorChoice" value="allAuthors" checked>
-                <label for="allAuthors">Inget val</label><br>
+                <input type="radio" class="filterInput" id="allAuthors" name="authorChoice" value="allAuthors" checked>
+                <label for="allAuthors" class="filterLabel">Inget val</label><br>
 
-                <input type="radio" id="a-z" name="authorChoice" value="a-z">
-                <label for="a-z">A-Ö</label><br>
+                <input type="radio" class="filterInput" id="a-z" name="authorChoice" value="a-z">
+                <label for="a-z" class="filterLabel">A-Ö</label><br>
 
-                <input type="radio" id="z-a" name="authorChoice" value="z-a" >
-                <label for="z-a">Ö-A</label><br>
+                <input type="radio" class="filterInput" id="z-a" name="authorChoice" value="z-a" >
+                <label for="z-a" class="filterLabel">Ö-A</label><br>
             </div><br>
 
             <button type="button" class="dropbtn" onclick="dropdownFunction('publicationDateDropdown')">Utgivningsdatum</button>
             <div class="dropdown-content" id="publicationDateDropdown">
-                <input type="radio" id="allPubDate" name="publicationDateChoice" value="allPubDate" checked>
-                <label for="allPubDate">Inget val</label><br>
+                <input type="radio" class="filterInput" id="allPubDate" name="publicationDateChoice" value="allPubDate" checked>
+                <label for="allPubDate" class="filterLabel">Inget val</label><br>
 
-                <input type="radio" id="newest" name="publicationDateChoice" value="newest">
-                <label for="newest">Nyaste</label><br>
+                <input type="radio" class="filterInput" id="newest" name="publicationDateChoice" value="newest">
+                <label for="newest" class="filterLabel">Nyaste</label><br>
 
-                <input type="radio" id="oldest" name="publicationDateChoice" value="oldest">
-                <label for="oldest">Äldsta</label><br>
+                <input type="radio" class="filterInput" id="oldest" name="publicationDateChoice" value="oldest">
+                <label for="oldest" class="filterLabel">Äldsta</label><br>
             </div><br>
 
             <button type="button" class="dropbtn" onclick="dropdownFunction('priceDropdown')">Pris</button>
             <div class="dropdown-content" id="priceDropdown">
-                <input type="radio" id="allPrice" name="priceChoice" value="allPrice" checked>
-                <label for="allPrice">Inget val</label><br>
+                <input type="radio" class="filterInput" id="allPrice" name="priceChoice" value="allPrice" checked>
+                <label for="allPrice" class="filterLabel">Inget val</label><br>
 
-                <input type="radio" id="lowest" name="priceChoice" value="lowest">
-                <label for="lowest">Låg-hög</label><br>
+                <input type="radio" class="filterInput" id="lowest" name="priceChoice" value="lowest">
+                <label for="lowest" class="filterLabel">Låg-hög</label><br>
 
-                <input type="radio" id="highest" name="priceChoice" value="highest">
-                <label for="highest">Högt-lågt</label><br>
+                <input type="radio" class="filterInput" id="highest" name="priceChoice" value="highest">
+                <label for="highest" class="filterLabel">Högt-lågt</label><br>
             </div><br>
 
             <button type="button" id="searchBtn" onclick="searchFunction()">Sök</button><br><br>
