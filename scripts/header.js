@@ -1,4 +1,4 @@
-//Template för att länka till header. I html-filerna: <script src="header.js">
+//Template för att länka till header. I html-filerna: <script src="scripts/header.js">
 const template = document.createElement('template');
 
 template.innerHTML = `
