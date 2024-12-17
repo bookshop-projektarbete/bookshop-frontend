@@ -6,67 +6,84 @@ const cartTotal = document.getElementById("cart-total");
 
 const cartItems = [
     {
-        "_id": "6756f2bf23581d968ded9e4c",
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "isbn": "9780743273565",
-        "price": 100.99,
-        "category": "Classic Literature",
-        "stock": 50,
-        "description": "A novel about the American dream set in the 1920s.",
+        "_id": "6756f2bf23581d968ded9e4f",
+        "title": "Män som hatar kvinnor",
+        "author": "Stieg Larsson",
+        "isbn": "9789170280583",
+        "price": 129,
+        "category": "Kriminalroman",
+        "stock": 30,
+        "description": "Den första boken i Stieg Larssons Millennium-serie.",
         "cover_image": {
-            "url": "https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg",
-            "alt": "Cover image of The Great Gatsby by F. Scott Fitzgerald",
-            "_id": "675c33c61b6f04d3e84aad9a"
+            "url": "https://image.bokus.com/images/9789113071299_383x_man-som-hatar-kvinnor_pocket",
+            "alt": "Omslag av Män som hatar kvinnor av Stieg Larsson",
+            "_id": "676130eba793e77169993af4"
         },
-        "published_year": 1925
+        "published_year": 2005
     },
     {
-        "_id": "6756f2bf23581d968ded9e4d",
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "isbn": "9780061120084",
-        "price": 70.99,
-        "category": "Classic Literature",
-        "stock": 35,
-        "description": "A novel set in the Depression-era Deep South, revolving around racial injustice.",
+        "_id": "6756f2bf23581d968ded9e50",
+        "title": "Hundraåringen som klev ut genom fönstret och försvann",
+        "author": "Jonas Jonasson",
+        "isbn": "9789175031746",
+        "price": 99,
+        "category": "Humor",
+        "stock": 45,
+        "description": "En humoristisk berättelse om en man som rymmer från sitt äldreboende.",
         "cover_image": {
-            "url": "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-            "alt": "Cover image of To Kill a Mockingbird by Harper Lee",
-            "_id": "675c33c61b6f04d3e84aad9b"
+            "url": "https://image.bokus.com/images/9789164207678_383x_hundraaringen-som-klev-ut-genom-fonstret-och-forsvann_pocket",
+            "alt": "Omslag av Män som hatar kvinnor av Stieg Larsson",
+            "_id": "676130eba793e77169993af5"
         },
-        "published_year": 1960
+        "published_year": 2009
     },
     {
-        "_id": "6756f2bf23581d968ded9e4e",
-        "title": "1984",
-        "author": "George Orwell",
-        "isbn": "9780451524935",
-        "price": 90.99,
-        "category": "Dystopian",
-        "stock": 20,
-        "description": "A novel about a dystopian future where society is controlled by a totalitarian regime.",
+        "_id": "6756f2bf23581d968ded9e51",
+        "title": "En man som heter Ove",
+        "author": "Fredrik Backman",
+        "isbn": "9789175031746",
+        "price": 89,
+        "category": "Roman",
+        "stock": 40,
+        "description": "En hjärtevärmande berättelse om en grinig gammal man.",
         "cover_image": {
-            "url": "https://thebannedbook.shop/cdn/shop/files/61NAx5pd6XL.jpg?v=1715295618",
-            "alt": "Cover image of 1984 by George Orwell",
-            "_id": "675c33c61b6f04d3e84aad9c"
-        },
-        "published_year": 1949
-    },
-    {
-        "title": "The Fault in Our Stars",
-        "author": "John Green",
-        "isbn": "9780525478812",
-        "price": 150.99,
-        "category": "Young Adult",
-        "stock": 100,
-        "description": "A story about young love and terminal illness.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9780141345659_383x_the-fault-in-our-stars_haftad",
-            "alt": "Cover image of The Fault in Our Stars",
-            "_id": "675c33c61b6f04d3e84aad9d"
+            "url": "https://image.bokus.com/images/9789137507477_383x_en-man-som-heter-ove_pocket",
+            "alt": "Omslag av En man som heter Ove av Fredrik Backman",
+            "_id": "676130eba793e77169993af6"
         },
         "published_year": 2012
+    },
+    {
+        "_id": "6756f2bf23581d968ded9e52",
+        "title": "Snabba cash",
+        "author": "Jens Lapidus",
+        "isbn": "9789170016311",
+        "price": 110,
+        "category": "Thriller",
+        "stock": 50,
+        "description": "En spännande thriller om Stockholms undre värld.",
+        "cover_image": {
+            "url": "https://image.bokus.com/images/9789170014536_383x_snabba-cash_pocket",
+            "alt": "Omslag av Snabba cash av Jens Lapidus",
+            "_id": "676130eba793e77169993af7"
+        },
+        "published_year": 2006
+    },
+    {
+        "_id": "6756f2bf23581d968ded9e52",
+        "title": "Snabba cash",
+        "author": "Jens Lapidus",
+        "isbn": "9789170016311",
+        "price": 110,
+        "category": "Thriller",
+        "stock": 50,
+        "description": "En spännande thriller om Stockholms undre värld.",
+        "cover_image": {
+            "url": "https://image.bokus.com/images/9789170014536_383x_snabba-cash_pocket",
+            "alt": "Omslag av Snabba cash av Jens Lapidus",
+            "_id": "676130eba793e77169993af7"
+        },
+        "published_year": 2006
     }
 ];
 
@@ -117,11 +134,11 @@ const handleItemQuantity = (isbn) => {
 }
 
 //Function to create and display information about each item
-const createItemInfo = (title, isbn) => {
+const createItemInfo = (title, isbn, author) => {
     const itemInfo = document.createElement("div");
     itemInfo.setAttribute("data-isbn", isbn);
     itemInfo.classList.add("grid-content", "item-info");
-    itemInfo.innerHTML = `<ul><li>${title}</li><li class="text-small">${isbn}</li></ul>`;
+    itemInfo.innerHTML = `<ul><li>${title}</li><li class="text-small">${author}</li></ul>`;
 
     return itemInfo;
 }
@@ -136,11 +153,19 @@ const createItemPrice = (price, isbn) => {
     return itemPrice;
 }
 
+const createDivider = (isbn) => {
+    const divider = document.createElement("div");
+    divider.setAttribute("data-isbn", isbn);
+    divider.classList.add("divider");
+
+    return divider;
+}
+
 //Function to create checkout button
 const createCheckoutButton = () => {
     const checkoutButton = document.createElement("button");
     checkoutButton.classList.add("checkout-button");
-    checkoutButton.innerText = "Betala";
+    checkoutButton.innerText = "Till betalning";
 
     return checkoutButton;
 }
@@ -151,7 +176,7 @@ const renderTotalPrice = () => {
         return total + price;
     }, 0);
 
-    cartTotal.innerText = `Totalpris: ${totalCost} kr`;
+    cartTotal.innerHTML = `<h2 class="cart-title">Totalpris:</h2><h2 class="cart-title">${totalCost} kr</h2>`;
 
     return totalCost;
 }
@@ -190,6 +215,12 @@ const renderCartItems = () => {
     //Clear the cartItemHolder container
     cartItemHolder.innerHTML = "";
 
+    //Remove checkoutButton if visible
+    const existingCheckoutButton = document.querySelector(".checkout-button");
+    if (existingCheckoutButton) {
+        existingCheckoutButton.remove();
+    }
+
     // If no items are in the cart, display message
     if (cartItems.length === 0) {
         const emptyCartMsg = document.createElement("p");
@@ -198,7 +229,14 @@ const renderCartItems = () => {
 
         cartItemHolder.appendChild(emptyCartMsg);
         // If there are items in the cart, render the items, the total price and checkout button
+
+        //Hide cartTotal when cart is empty
+        cartTotal.style.display = "none";
+
     } else {
+
+        //Show cartTotal when cart has items
+        cartTotal.style.display = "block";
 
         //Array of all unique isbns in the cart, used to avoid displaying duplicates
         const uniqueCartItems = [
@@ -212,13 +250,14 @@ const renderCartItems = () => {
             const itemQuantityHolder = createItemQuantity(isbn);
             const itemInfo = createItemInfo(title, isbn, author);
             const itemPrice = createItemPrice(price, isbn);
+            const divider = createDivider(isbn);
 
-            cartItemHolder.append(itemImageHolder, itemQuantityHolder, itemInfo, itemPrice);
+            cartItemHolder.append(itemImageHolder, itemQuantityHolder, itemInfo, itemPrice, divider);
         })
 
         //Render the total price
         renderTotalPrice();
-        // Create and append the checkout
+        // Create and append the checkoutButton
         const checkoutButton = createCheckoutButton();
         mainContentHolder.appendChild(checkoutButton);
 
