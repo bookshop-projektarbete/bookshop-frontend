@@ -14,6 +14,38 @@ async function getData() {
     };
 };
 
+// clear unnecessary filters before applying
+function clearFilters(filters) {
+    return filters.filter(value => value && !value.startsWith('all'));
+}
+
+// save filtered books to localStorage
+function applyFilters() {
+    const selectedGenres = clearFilters(searchResults('genreChoice'));
+    const selectedAuthors = clearFilters(searchResults('authorChoice'));
+    const selectedYears = clearFilters(searchResults('publicationDateChoice'));
+    const selectedPrices = clearFilters(searchResults('priceChoice').map(price => parseInt(price)));
+
+    const filteredBooks = booksData.filter(book => {
+        const bookGenre = book.category?.trim().toLowerCase();
+        const bookAuthor = book.author?.trim().toLowerCase();
+        const bookYear = book.published_year?.toString();
+        const bookPrice = book.price;
+
+        const matchesGenre = selectedGenres.length === 0 || selectedGenres.includes(bookGenre);
+        const matchesAuthor = selectedAuthors.length === 0 || selectedAuthors.includes(bookAuthor);
+        const matchesYear = selectedYears.length === 0 || selectedYears.includes(bookYear);
+        const matchesPrice = selectedPrices.length === 0 || selectedPrices.some(price => bookPrice <= price);
+
+        return matchesGenre && matchesAuthor && matchesYear && matchesPrice;
+    });
+
+    localStorage.setItem('bookshop_filteredBooks', JSON.stringify(filteredBooks));
+    console.log('Filtered books saved to localStorage:', filteredBooks);
+
+    window.location.href = 'index.html';
+}
+
 // show or hide the filters
 function dropdownFunction(a) {
     document.getElementById(a).classList.toggle('show');
@@ -29,6 +61,7 @@ document.getElementById('searchBtn').addEventListener('click', function () {
             openDropdown.classList.remove('show');
         };
     };
+    applyFilters();
 });
 
 
@@ -62,7 +95,7 @@ function searchResults(name) {
     const nameArray = document.getElementsByName(name);
     return Array.from(nameArray)
         .filter(input => input.checked)
-        .map(input => input.value);
+        .map(input => input.value.trim().toLowerCase());
 };
 
 
@@ -79,17 +112,12 @@ function genreList() {
     return uniqueList;
 };
 
-// author (by last name)
+// author
 function authorList() {
     const data = booksData;
     let list = [];
     for (let i = 0; i < data.length; i++) {
-        const fullName = data[i].author;
-        const sepName = fullName.split(' ');
-        sepName.unshift(sepName.at(-1) + ',');
-        sepName.pop();
-        const newName = sepName.join(' ');
-        list.push(newName);
+        list.push(data[i].author);
     };
     const uniqueList = new Set(list.sort());
     return uniqueList;
@@ -165,11 +193,9 @@ function createAuthorFilter() {
         const filterLabel = document.createElement('label');
         filterLabel.setAttribute('for', value);
         filterLabel.setAttribute('class', 'filterLabel');
-
         filterLabel.innerText = value;
 
         const br = document.createElement('br');
-
         document.getElementById('authorDropdown').append(filterInput, filterLabel, br);
     });
 };
