@@ -3,89 +3,12 @@ const mainContentHolder = document.getElementById("main-content-holder")
 const cartItemHolder = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 
+//Get books from localStorage
+let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-const cartItems = [
-    {
-        "_id": "6756f2bf23581d968ded9e4f",
-        "title": "Män som hatar kvinnor",
-        "author": "Stieg Larsson",
-        "isbn": "9789170280583",
-        "price": 129,
-        "category": "Kriminalroman",
-        "stock": 30,
-        "description": "Den första boken i Stieg Larssons Millennium-serie.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9789113071299_383x_man-som-hatar-kvinnor_pocket",
-            "alt": "Omslag av Män som hatar kvinnor av Stieg Larsson",
-            "_id": "676130eba793e77169993af4"
-        },
-        "published_year": 2005
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e50",
-        "title": "Hundraåringen som klev ut genom fönstret och försvann",
-        "author": "Jonas Jonasson",
-        "isbn": "9789175031746",
-        "price": 99,
-        "category": "Humor",
-        "stock": 45,
-        "description": "En humoristisk berättelse om en man som rymmer från sitt äldreboende.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9789164207678_383x_hundraaringen-som-klev-ut-genom-fonstret-och-forsvann_pocket",
-            "alt": "Omslag av Män som hatar kvinnor av Stieg Larsson",
-            "_id": "676130eba793e77169993af5"
-        },
-        "published_year": 2009
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e51",
-        "title": "En man som heter Ove",
-        "author": "Fredrik Backman",
-        "isbn": "9789175031746",
-        "price": 89,
-        "category": "Roman",
-        "stock": 40,
-        "description": "En hjärtevärmande berättelse om en grinig gammal man.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9789137507477_383x_en-man-som-heter-ove_pocket",
-            "alt": "Omslag av En man som heter Ove av Fredrik Backman",
-            "_id": "676130eba793e77169993af6"
-        },
-        "published_year": 2012
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e52",
-        "title": "Snabba cash",
-        "author": "Jens Lapidus",
-        "isbn": "9789170016311",
-        "price": 110,
-        "category": "Thriller",
-        "stock": 50,
-        "description": "En spännande thriller om Stockholms undre värld.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9789170014536_383x_snabba-cash_pocket",
-            "alt": "Omslag av Snabba cash av Jens Lapidus",
-            "_id": "676130eba793e77169993af7"
-        },
-        "published_year": 2006
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e52",
-        "title": "Snabba cash",
-        "author": "Jens Lapidus",
-        "isbn": "9789170016311",
-        "price": 110,
-        "category": "Thriller",
-        "stock": 50,
-        "description": "En spännande thriller om Stockholms undre värld.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9789170014536_383x_snabba-cash_pocket",
-            "alt": "Omslag av Snabba cash av Jens Lapidus",
-            "_id": "676130eba793e77169993af7"
-        },
-        "published_year": 2006
-    }
-];
+const saveCartToLocalStorage = () => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+};
 
 //Function to create elements for cart item images
 const createItemImageHolder = ({ url, alt, isbn }) => {
@@ -187,6 +110,7 @@ const handleIncreaseButton = (isbn) => {
     const newBook = { ...bookToAdd };
     cartItems.push(newBook);
 
+    saveCartToLocalStorage();
     renderCartItems();
 }
 
@@ -207,6 +131,7 @@ const handleDecreaseButton = (isbn) => {
         }
     }
 
+    saveCartToLocalStorage();
     renderCartItems();
 }
 
