@@ -183,6 +183,7 @@ button:hover {
 
 .content-wrapper {
   margin: 0 auto;
+  width: 100%;
 }
 
 /* Loader */
@@ -283,14 +284,15 @@ img {
   /*Styling search bar for home page*/
   #searchbar-container {
    width: 40vw;
-}
+  }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    
-  /*Styling search bar for home page*/
-#searchbar-container {
-  width: 30vw;
-}
-}
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+
+    /*Styling search bar for home page*/
+    #searchbar-container {
+      width: 30vw;
+    }
+  }
