@@ -89,12 +89,31 @@ const createBookCard = (book) => {
   });
 }
 
-// Fetch data from API and add data to book cards
+// Fetch data from localStorage or API and add data to book cards
 const fetchBooks = async () => {
   try {
     showLoader();
-    const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-    const books = await response.json();
+
+    // Check if there are any books in localStorage
+    const filteredBooks = JSON.parse(localStorage.getItem('bookshop_filteredBooks')) || null;
+
+    let books;
+
+    if (filteredBooks && filteredBooks.length > 0) {
+      console.log("Använder filtrerade böcker från localStorage:", filteredBooks);
+      books = filteredBooks;
+      // Clear localStorage from filtered books
+      localStorage.removeItem('bookshop_filteredBooks');
+    } else {
+      console.log("Hämtar alla böcker från API...");
+      const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
+      books = await response.json();
+    }
+
+    // Clear previous book cards
+    bookCardContainer.innerHTML = "";
+
+    // Create new book cards
     books.forEach(book => {
       createBookCard(book);
     });
