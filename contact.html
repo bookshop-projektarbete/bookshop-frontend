@@ -20,40 +20,43 @@
 
     <!-- Main Container -->
     <div class="container">
-        <h3 id="contact-heading"><i>Kontakta Oss</i></h3>
-        <p id="contact-paragraph">Vänligen fyll i formuläret nedan för att skicka ett meddelande till oss. Vi kommer att kontakta dig så snart vi kan.</p>
+        <h3 id="contact-header"><i>Kontakta Oss</i></h3>
+        <p id="contactform-paragraph">Vänligen fyll i formuläret nedan för att skicka ett meddelande till oss. Vi kommer att kontakta dig så snart vi kan.</p>
 
-        <form class="contact-form" novalidate>
-            <input type="text" class="form-control" id="inputName" placeholder="Namn *" required>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email *" required>
-            <input type="tel" class="form-control" id="inputPhone" placeholder="Telefon/Mobil">
-            <textarea class="form-control" id="inputAddress" placeholder="Adress" rows="2"></textarea>
-            <input type="text" class="form-control" id="inputSubject" placeholder="Ämne *" required>
-            <select class="form-select" id="inlineFormSelectPref">
-                <option value="" disabled selected>--Välj--</option>
-                <option value="1">Betalningsrelaterad</option>
-                <option value="2">Beställningsrelaterad</option>
-                <option value="3">Kurirrelaterad</option>
-                <option value="4">Författare/Utgivare relaterade</option>
-                <option value="5">Affärsrelaterad</option>
-                <option value="6">Affiliation relaterad</option>
-                <option value="7">Funktioner, förslag och feedback</option>
-                <option value="8">Något annat</option>
-            </select>
-            <textarea class="form-control" id="inputDescription" placeholder="Description *" rows="4" required></textarea>
-            <button type="submit" class="btn-submit">Submit</button>
-        </form>
+        <div class="contact-content">
+            <form class="contact-form" novalidate>
+                <input type="text" class="form-control" id="inputName" placeholder="Namn *" required>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email *" required>
+                <input type="tel" class="form-control" id="inputPhone" placeholder="Telefon/Mobil">
+                <textarea class="form-control" id="inputAddress" placeholder="Adress" rows="2"></textarea>
+                <input type="text" class="form-control" id="inputSubject" placeholder="Ämne *" required>
+                <select class="form-select" id="inlineFormSelectPref">
+                    <option value="" disabled selected>--Välj--</option>
+                    <option value="1">Betalningsrelaterad</option>
+                    <option value="2">Beställningsrelaterad</option>
+                    <option value="3">Kurirrelaterad</option>
+                    <option value="4">Författare/Utgivare relaterade</option>
+                    <option value="5">Affärsrelaterad</option>
+                    <option value="6">Affiliation relaterad</option>
+                    <option value="7">Funktioner, förslag och feedback</option>
+                    <option value="8">Något annat</option>
+                </select>
+                <textarea class="form-control" id="inputDescription" placeholder="Description *" rows="4" required></textarea>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
 
-        <div class="contact-info">
-            <p id="contact-info-address">Vår adress:</p>
-            <p id="contact-info-details">1234 Main St<br>Stockholm, Sweden</p>
-            <p id="contact-info-email">Email: info@boklusen.se</p>
-            <p id="contact-info-phone">Telefon: +46 123 456 789</p>
+            <div class="contact-info" id="contact-info">
+                <img src="img/1.png" alt="Contact Image" id="contact-image">
+                <p>Vår adress:</p>
+                <p>1234 Main St<br>Stockholm, Sweden</p>
+                <p>Email: info@boklusen.se</p>
+                <p>Telefon: +46 123 456 789</p>
+            </div>
         </div>
     </div>
 
     <!-- Load footer dynamically -->
     <script src="footer.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>
