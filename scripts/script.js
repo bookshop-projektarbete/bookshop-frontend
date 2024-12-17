@@ -5,6 +5,11 @@ const searchButton = document.getElementById("main-searchbutton");
 const loader = document.querySelector('.loader');
 const bookCardContainer = document.getElementById('card-container');
 
+const fetchBooksFromAPI = async () => {
+  const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
+  return response.json();
+};
+
 const addToCart = (book) => {
   // Fetch books from localStorage
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -100,14 +105,11 @@ const fetchBooks = async () => {
     let books;
 
     if (filteredBooks && filteredBooks.length > 0) {
-      console.log("Använder filtrerade böcker från localStorage:", filteredBooks);
       books = filteredBooks;
       // Clear localStorage from filtered books
       localStorage.removeItem('bookshop_filteredBooks');
     } else {
-      console.log("Hämtar alla böcker från API...");
-      const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-      books = await response.json();
+      books = await fetchBooksFromAPI();
     }
 
     // Clear previous book cards
@@ -128,8 +130,7 @@ const fetchBooks = async () => {
 // Fetch data from API and filter search results
 const filterBySearch = async (query) => {
   try {
-    const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-    const books = await response.json();
+    let books = await fetchBooksFromAPI();
 
     // Filter books
     const filteredBooks = books.filter((book) =>
