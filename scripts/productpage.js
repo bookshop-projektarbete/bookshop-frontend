@@ -1,65 +1,82 @@
 
 // Fetch API - specific book 
 
-// Fetch all data
+// Fetch book id from Product View link
+const urlParams = new URLSearchParams(window.location.search);
+const bookId = urlParams.get('id');
+
+document.getElementById('loading-message').style.display = 'block';
+document.getElementById('pp-main').style.display = 'none';
+
 async function fetchBookData() {
     try {
-        const response = await fetch(`https://bookshop-backend-phi.vercel.app/products/`); 
-        const books = await response.json();
-        if (books) {
-            console.log(books);
-            return books;
-        } else {
-            console.error('No books recieved from API');
+        const response = await fetch('https://bookshop-backend-phi.vercel.app/products/');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
         }
-    } catch (error) {
-        console.error('Error fetching book:', error);
-    }
+
+        const books = await response.json();
+        // Find specific book from bookId
+        const book = books.find(item => item._id === bookId)
+
+        if (!book) {
+            document.getElementById('pp-main').innerHTML = "No book found";
+            return;
+        }
+
+        document.getElementById('loading-message').style.display = "none";
+        document.getElementById('pp-main').style.display = "block";
+
+        displayBookData(book);
+        } catch (error) {
+            console.log('Error fetching album data:', error);
+            document.getElementById('pp-main').innerHTML = "Error fetching book data";
+        }
 }
 
-// Find and display book info from id
-async function displayBookData(id) {
-    const data = await fetchBookData();
-    const book = data.find(books => books._id === id);
-    
-    if (book) {
-        console.log(`Title: ${book.title}`);
-        document.getElementById('pp-book-img').src = book.cover_image.url;
-        document.getElementById('pp-book-img').alt = book.title;
+// Display book data from id
+function displayBookData(book) {
+    document.getElementById('pp-book-img').src = book.cover_image.url;
+    document.getElementById('pp-book-img').alt = book.title;
 
-        document.getElementById('pp-title').textContent = book.title;
-        document.getElementById('pp-author').textContent = book.author;
-        document.getElementById('pp-isbn').textContent = `ISBN: ${book.isbn}`;
-        document.getElementById('pp-category').textContent = `Kategori: ${book.category}`;
+    document.getElementById('pp-title').textContent = book.title;
+    document.getElementById('pp-author').textContent = book.author;
+    document.getElementById('pp-isbn').textContent = `ISBN: ${book.isbn}`;
+    document.getElementById('pp-category').textContent = `Kategori: ${book.category}`;
 
-        document.getElementById('pp-summary').innerHTML = `Sammanfattning:<br> ${book.description}`;
+    document.getElementById('pp-summary').innerHTML = `Sammanfattning:<br> ${book.description}`;
 
-        document.getElementById('pp-price').innerHTML = `${book.price} SEK`;
+    document.getElementById('pp-price').innerHTML = `${book.price} SEK`;
 
-        document.getElementById('pp-in-stock').innerHTML = `${book.stock}st i lager`;
-    } else {
-        console.log(`Book not found`);
-        }
-};
+    document.getElementById('pp-in-stock').innerHTML = `${book.stock}st i lager`;
 
-// Display book info on page (with example id for now)
-displayBookData("6756f2bf23581d968ded9e4f");
+    const addToCartBtn = document.getElementById('pp-add-button');
+    addToCartBtn.addEventListener('click', () => {
+        addToCart(book);
+    });
+}
 
-const addToCartBtn = document.getElementById('pp-add-button');
+// Only display data if bookId is valid
+if (bookId) {
+    fetchBookData();
+} else {
+    console.log('Error: No book ID in URL');
+    document.getElementById('pp-main').innerHTML = "No book found with this ID";
+}
 
-// Display added to cart-message, 5s with fade out
-addToCartBtn.addEventListener ('click', function(event){
-    event.preventDefault();
-    const addedMessage = document.getElementById('added-message');
-    addedMessage.style.opacity = "1";
-    addedMessage.style.display = "inline-block"
-
-    setTimeout(() => {
-        addedMessage.style.transition = "opacity 0.5s ease-out";
-        addedMessage.style.opacity = "0";
-
-        setTimeout(() => {
-            addedMessage.style.display = "none";
-        }, "500");
-        }, "3000");    
-});
+const addToCart = (book) => {
+    // Fetch books from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    // Check if book exists in localStorage
+    const bookExists = cart.some(item => item._id === book._id);
+    if (bookExists) {
+      alert("Boken finns redan i varukorgen!");
+      return;
+    }
+  
+    // Add book to localStorage
+    cart.push(book);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${book.title} har lagts till i varukorgen!`);
+  }
