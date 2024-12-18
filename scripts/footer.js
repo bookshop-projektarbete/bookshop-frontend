@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boklusen</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
-    </style>
-</head>
-<body>
+//Template för att länka till footer. I html-filerna: <script src="scripts/footer.js">
+const footerTemplate = document.createElement('template');
+
+footerTemplate.innerHTML=`
     <footer>
         <div id="footer-left">
             <div id="kundservice">
@@ -32,5 +24,5 @@
             <a href="index.html"><img src="icons/logo.svg" id="logo-footer"></a>
         </div>
     </footer>
-</body>
-</html>
+`
+document.body.appendChild(footerTemplate.content);

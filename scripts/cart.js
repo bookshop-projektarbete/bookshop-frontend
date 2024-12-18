@@ -3,72 +3,12 @@ const mainContentHolder = document.getElementById("main-content-holder")
 const cartItemHolder = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 
+//Get books from localStorage
+let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-const cartItems = [
-    {
-        "_id": "6756f2bf23581d968ded9e4c",
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "isbn": "9780743273565",
-        "price": 100.99,
-        "category": "Classic Literature",
-        "stock": 50,
-        "description": "A novel about the American dream set in the 1920s.",
-        "cover_image": {
-            "url": "https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg",
-            "alt": "Cover image of The Great Gatsby by F. Scott Fitzgerald",
-            "_id": "675c33c61b6f04d3e84aad9a"
-        },
-        "published_year": 1925
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e4d",
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "isbn": "9780061120084",
-        "price": 70.99,
-        "category": "Classic Literature",
-        "stock": 35,
-        "description": "A novel set in the Depression-era Deep South, revolving around racial injustice.",
-        "cover_image": {
-            "url": "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-            "alt": "Cover image of To Kill a Mockingbird by Harper Lee",
-            "_id": "675c33c61b6f04d3e84aad9b"
-        },
-        "published_year": 1960
-    },
-    {
-        "_id": "6756f2bf23581d968ded9e4e",
-        "title": "1984",
-        "author": "George Orwell",
-        "isbn": "9780451524935",
-        "price": 90.99,
-        "category": "Dystopian",
-        "stock": 20,
-        "description": "A novel about a dystopian future where society is controlled by a totalitarian regime.",
-        "cover_image": {
-            "url": "https://thebannedbook.shop/cdn/shop/files/61NAx5pd6XL.jpg?v=1715295618",
-            "alt": "Cover image of 1984 by George Orwell",
-            "_id": "675c33c61b6f04d3e84aad9c"
-        },
-        "published_year": 1949
-    },
-    {
-        "title": "The Fault in Our Stars",
-        "author": "John Green",
-        "isbn": "9780525478812",
-        "price": 150.99,
-        "category": "Young Adult",
-        "stock": 100,
-        "description": "A story about young love and terminal illness.",
-        "cover_image": {
-            "url": "https://image.bokus.com/images/9780141345659_383x_the-fault-in-our-stars_haftad",
-            "alt": "Cover image of The Fault in Our Stars",
-            "_id": "675c33c61b6f04d3e84aad9d"
-        },
-        "published_year": 2012
-    }
-];
+const saveCartToLocalStorage = () => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+};
 
 //Function to create elements for cart item images
 const createItemImageHolder = ({ url, alt, isbn }) => {
@@ -117,11 +57,11 @@ const handleItemQuantity = (isbn) => {
 }
 
 //Function to create and display information about each item
-const createItemInfo = (title, isbn) => {
+const createItemInfo = (title, isbn, author) => {
     const itemInfo = document.createElement("div");
     itemInfo.setAttribute("data-isbn", isbn);
     itemInfo.classList.add("grid-content", "item-info");
-    itemInfo.innerHTML = `<ul><li>${title}</li><li class="text-small">${isbn}</li></ul>`;
+    itemInfo.innerHTML = `<ul><li>${title}</li><li class="text-small">${author}</li></ul>`;
 
     return itemInfo;
 }
@@ -136,11 +76,19 @@ const createItemPrice = (price, isbn) => {
     return itemPrice;
 }
 
+const createDivider = (isbn) => {
+    const divider = document.createElement("div");
+    divider.setAttribute("data-isbn", isbn);
+    divider.classList.add("divider");
+
+    return divider;
+}
+
 //Function to create checkout button
 const createCheckoutButton = () => {
     const checkoutButton = document.createElement("button");
     checkoutButton.classList.add("checkout-button");
-    checkoutButton.innerText = "Betala";
+    checkoutButton.innerText = "Till betalning";
 
     return checkoutButton;
 }
@@ -151,7 +99,7 @@ const renderTotalPrice = () => {
         return total + price;
     }, 0);
 
-    cartTotal.innerText = `Totalpris: ${totalCost} kr`;
+    cartTotal.innerHTML = `<h2 class="cart-title">Totalpris:</h2><h2 class="cart-title">${totalCost} kr</h2>`;
 
     return totalCost;
 }
@@ -162,6 +110,7 @@ const handleIncreaseButton = (isbn) => {
     const newBook = { ...bookToAdd };
     cartItems.push(newBook);
 
+    saveCartToLocalStorage();
     renderCartItems();
 }
 
@@ -182,6 +131,7 @@ const handleDecreaseButton = (isbn) => {
         }
     }
 
+    saveCartToLocalStorage();
     renderCartItems();
 }
 
@@ -189,6 +139,12 @@ const handleDecreaseButton = (isbn) => {
 const renderCartItems = () => {
     //Clear the cartItemHolder container
     cartItemHolder.innerHTML = "";
+
+    //Remove checkoutButton if visible
+    const existingCheckoutButton = document.querySelector(".checkout-button");
+    if (existingCheckoutButton) {
+        existingCheckoutButton.remove();
+    }
 
     // If no items are in the cart, display message
     if (cartItems.length === 0) {
@@ -198,7 +154,14 @@ const renderCartItems = () => {
 
         cartItemHolder.appendChild(emptyCartMsg);
         // If there are items in the cart, render the items, the total price and checkout button
+
+        //Hide cartTotal when cart is empty
+        cartTotal.style.display = "none";
+
     } else {
+
+        //Show cartTotal when cart has items
+        cartTotal.style.display = "block";
 
         //Array of all unique isbns in the cart, used to avoid displaying duplicates
         const uniqueCartItems = [
@@ -212,13 +175,14 @@ const renderCartItems = () => {
             const itemQuantityHolder = createItemQuantity(isbn);
             const itemInfo = createItemInfo(title, isbn, author);
             const itemPrice = createItemPrice(price, isbn);
+            const divider = createDivider(isbn);
 
-            cartItemHolder.append(itemImageHolder, itemQuantityHolder, itemInfo, itemPrice);
+            cartItemHolder.append(itemImageHolder, itemQuantityHolder, itemInfo, itemPrice, divider);
         })
 
         //Render the total price
         renderTotalPrice();
-        // Create and append the checkout
+        // Create and append the checkoutButton
         const checkoutButton = createCheckoutButton();
         mainContentHolder.appendChild(checkoutButton);
 
@@ -226,5 +190,3 @@ const renderCartItems = () => {
 }
 
 renderCartItems();
-
-

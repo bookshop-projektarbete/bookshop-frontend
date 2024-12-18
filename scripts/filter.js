@@ -149,12 +149,14 @@ async function createGenreFilter() {
         filterInput.setAttribute('type', 'checkbox');
         filterInput.setAttribute('id', value);
         filterInput.setAttribute('class', 'specificGenre');
+        filterInput.classList.add('filterInput');
         filterInput.setAttribute('name', 'genreChoice');
         filterInput.setAttribute('value', value);
         filterInput.checked = true;
 
         const filterLabel = document.createElement('label');
         filterLabel.setAttribute('for', value);
+        filterLabel.setAttribute('class', 'filterLabel');
         filterLabel.innerText = value;
 
         const br = document.createElement('br');
@@ -170,11 +172,14 @@ async function createAuthorFilter() {
         const filterInput = document.createElement('input');
         filterInput.setAttribute('type', 'checkbox');
         filterInput.setAttribute('id', value);
+        filterInput.setAttribute('class', 'filterInput');
         filterInput.setAttribute('name', 'authorChoice');
         filterInput.setAttribute('value', value);
 
         const filterLabel = document.createElement('label');
         filterLabel.setAttribute('for', value);
+        filterLabel.setAttribute('class', 'filterLabel');
+
         filterLabel.innerText = value;
 
         const br = document.createElement('br');
@@ -190,11 +195,14 @@ async function createPublicationDateFilter() {
         const filterInput = document.createElement('input');
         filterInput.setAttribute('type', 'checkbox');
         filterInput.setAttribute('id', value);
+        filterInput.setAttribute('class', 'filterInput');
         filterInput.setAttribute('name', 'publicationDateChoice');
         filterInput.setAttribute('value', value);
 
         const filterLabel = document.createElement('label');
         filterLabel.setAttribute('for', value);
+        filterLabel.setAttribute('class', 'filterLabel');
+
         filterLabel.innerText = value;
 
         const br = document.createElement('br');
@@ -210,11 +218,14 @@ async function createPriceFilter() {
         const filterInput = document.createElement('input');
         filterInput.setAttribute('type', 'checkbox');
         filterInput.setAttribute('id', i);
+        filterInput.setAttribute('class', 'filterInput');
         filterInput.setAttribute('name', 'priceChoice');
         filterInput.setAttribute('value', i);
 
         const filterLabel = document.createElement('label');
         filterLabel.setAttribute('for', i);
+        filterLabel.setAttribute('class', 'filterLabel');
+
         filterLabel.innerHTML = (i -100)+'-'+i;
 
         const br = document.createElement('br');

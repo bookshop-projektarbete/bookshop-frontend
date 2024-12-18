@@ -1,8 +1,26 @@
+const searchInput = document.getElementById("main-searchbar");
+const searchButton = document.getElementById("main-searchbutton");
 
 /* Product view for home page */
 const loader = document.querySelector('.loader');
 const bookCardContainer = document.getElementById('card-container');
 
+const addToCart = (book) => {
+  // Fetch books from localStorage
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Check if book exists in localStorage
+  const bookExists = cart.some(item => item._id === book._id);
+  if (bookExists) {
+    alert("Boken finns redan i varukorgen!");
+    return;
+  }
+
+  // Add book to localStorage
+  cart.push(book);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${book.title} har lagts till i varukorgen!`);
+}
 
 const showLoader = () => {
   loader.classList.remove('hidden');
@@ -13,10 +31,6 @@ const hideLoader = () => {
   loader.classList.add('hidden');
   bookCardContainer.classList.remove('hidden');
 };
-
-const searchInput = document.getElementById("main-searchbar");
-const searchButton = document.getElementById("main-searchbutton");
-
 
 const createBookCard = (book) => {
   // Main container
@@ -68,6 +82,11 @@ const createBookCard = (book) => {
 
   // Append bookCard to container
   bookCardContainer.appendChild(bookCard);
+
+  // Event listener
+  purchaseButton.addEventListener('click', () => {
+    addToCart(book);
+  });
 }
 
 // Fetch data from API and add data to book cards
@@ -89,47 +108,47 @@ const fetchBooks = async () => {
 
 // Fetch data from API and filter search results
 const filterBySearch = async (query) => {
-    try {
-        const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-        const books = await response.json();
+  try {
+    const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
+    const books = await response.json();
 
-        // Filter books
-        const filteredBooks = books.filter((book) =>
-            book.title.toLowerCase().includes(query.toLowerCase()) ||
-            book.author.toLowerCase().includes(query.toLowerCase())
-        );
+    // Filter books
+    const filteredBooks = books.filter((book) =>
+      book.title.toLowerCase().includes(query.toLowerCase()) ||
+      book.author.toLowerCase().includes(query.toLowerCase())
+    );
 
-        // Clear previously shown cards
-        bookCardContainer.innerHTML = "";
+    // Clear previously shown cards
+    bookCardContainer.innerHTML = "";
 
-        // Render filtered books
-        if (filteredBooks.length > 0) {
-            filteredBooks.forEach((book) => createBookCard(book));
-        } else {
-            bookCardContainer.innerHTML = "<p>Inga böcker matchade din sökning.</p>";
-        }
-    } catch (error) {
-        console.error('Failed to fetch books. Please check your API or network connection.', error);
-        bookCardContainer.innerHTML = '<p>Det gick inte att ladda böckerna. Försök igen senare.</p>';
+    // Render filtered books
+    if (filteredBooks.length > 0) {
+      filteredBooks.forEach((book) => createBookCard(book));
+    } else {
+      bookCardContainer.innerHTML = "<p>Inga böcker matchade din sökning.</p>";
     }
+  } catch (error) {
+    console.error('Failed to fetch books. Please check your API or network connection.', error);
+    bookCardContainer.innerHTML = '<p>Det gick inte att ladda böckerna. Försök igen senare.</p>';
+  }
 };
 
 // Event listener to search button
 searchButton.addEventListener("click", () => {
-    const query = searchInput.value.trim();
-    if (query) {
-        filterBySearch(query);
-    }
+  const query = searchInput.value.trim();
+  if (query) {
+    filterBySearch(query);
+  }
 });
 
 // Event listener to search by pressing enter
 searchInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        const query = searchInput.value.trim();
-        if (query) {
-            filterBySearch(query);
-        }
+  if (event.key === "Enter") {
+    const query = searchInput.value.trim();
+    if (query) {
+      filterBySearch(query);
     }
+  }
 });
 
 // On Load
