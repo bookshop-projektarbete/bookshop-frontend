@@ -7,6 +7,7 @@ async function fetchBookData() {
         const response = await fetch(`https://bookshop-backend-phi.vercel.app/products/`); 
         const books = await response.json();
         if (books) {
+            console.log(books);
             return books;
         } else {
             console.error('No books recieved from API');
@@ -31,16 +32,18 @@ async function displayBookData(id) {
         document.getElementById('pp-isbn').textContent = `ISBN: ${book.isbn}`;
         document.getElementById('pp-category').textContent = `Kategori: ${book.category}`;
 
-        document.getElementById('pp-summary').textContent = `Sammanfattning: ${book.description}`;
+        document.getElementById('pp-summary').innerHTML = `Sammanfattning:<br> ${book.description}`;
 
         document.getElementById('pp-price').innerHTML = `${book.price} SEK`;
+
+        document.getElementById('pp-in-stock').innerHTML = `${book.stock}st i lager`;
     } else {
         console.log(`Book not found`);
         }
 };
 
 // Display book info on page (with example id for now)
-displayBookData("6756f2bf23581d968ded9e4c");
+displayBookData("6756f2bf23581d968ded9e4f");
 
 const addToCartBtn = document.getElementById('pp-add-button');
 

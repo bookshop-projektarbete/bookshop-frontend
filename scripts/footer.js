@@ -2,21 +2,21 @@
 const footerTemplate = document.createElement('template');
 
 footerTemplate.innerHTML=`
-     <footer>
+    <footer>
         <div id="footer-left">
             <div id="kundservice">
-                <h3>Kundservice</h3>
+                <h3><a href="contact.html">Kundservice</a></h3>
                 <ul>
-                    <li>Frakt och retur</li>
-                    <li>Betalningsvillkor</li>
-                    <li>Kontakta oss</li>
+                    <li><a href="">Frakt och retur</a></li>
+                    <li><a href="">Betalningsvillkor</a></li>
+                    <li><a href="contact.html">Kontakta oss</a></li>
                 </ul>
             </div>
             <div id="om-oss">
-                <h3>Om Boklusen</h3>
+                <h3><a href="">Om Boklusen</a></h3>
                 <ul>
-                    <li>Vår historia</li>
-                    <li>Jobba med oss</li>
+                    <li><a href="">Vår historia</a></li>
+                    <li><a href="">Jobba med oss</a></li>
                 </ul>
             </div>
         </div>
