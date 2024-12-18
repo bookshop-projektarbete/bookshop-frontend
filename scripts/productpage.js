@@ -5,8 +5,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get('id');
 
-document.getElementById('loading-message').style.display = 'block';
-document.getElementById('pp-main').style.display = 'none';
+document.getElementById('pp-loading-message').style.display = 'block';
 
 async function fetchBookData() {
     try {
@@ -24,8 +23,7 @@ async function fetchBookData() {
             return;
         }
 
-        document.getElementById('loading-message').style.display = "none";
-        document.getElementById('pp-main').style.display = "block";
+        document.getElementById('pp-loading-message').style.display = "none";
 
         displayBookData(book);
         } catch (error) {
