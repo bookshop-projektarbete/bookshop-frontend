@@ -5,6 +5,11 @@ const searchButton = document.getElementById("main-searchbutton");
 const loader = document.querySelector('.loader');
 const bookCardContainer = document.getElementById('card-container');
 
+const fetchBooksFromAPI = async () => {
+  const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
+  return response.json();
+};
+
 const addToCart = (book) => {
   // Fetch books from localStorage
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -89,12 +94,28 @@ const createBookCard = (book) => {
   });
 }
 
-// Fetch data from API and add data to book cards
+// Fetch data from localStorage or API and add data to book cards
 const fetchBooks = async () => {
   try {
     showLoader();
-    const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-    const books = await response.json();
+
+    // Check if there are any books in localStorage
+    const filteredBooks = JSON.parse(localStorage.getItem('bookshop_filteredBooks')) || null;
+
+    let books;
+
+    if (filteredBooks && filteredBooks.length > 0) {
+      books = filteredBooks;
+      // Clear localStorage from filtered books
+      localStorage.removeItem('bookshop_filteredBooks');
+    } else {
+      books = await fetchBooksFromAPI();
+    }
+
+    // Clear previous book cards
+    bookCardContainer.innerHTML = "";
+
+    // Create new book cards
     books.forEach(book => {
       createBookCard(book);
     });
@@ -109,8 +130,7 @@ const fetchBooks = async () => {
 // Fetch data from API and filter search results
 const filterBySearch = async (query) => {
   try {
-    const response = await fetch('https://bookshop-backend-phi.vercel.app/products');
-    const books = await response.json();
+    let books = await fetchBooksFromAPI();
 
     // Filter books
     const filteredBooks = books.filter((book) =>
