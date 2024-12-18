@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Inclusive Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#contact-header {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contactform-paragraph {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form, .contact-info {
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-control, .form-select {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: orange;
+    border: 1px solid white;
+    color: white;
+}
+
+/* Contact Info Styles */
+#contact-info {
+    margin-top: 20px;
+    font-size: 1.2rem; 
+}
+
+#contact-info p {
+    font-size: 1rem; 
+}
+
+#contact-image {
+    height: auto;
+    width: 100%; 
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+    .contact-content {
+        flex-direction: row;
+        justify-content: space-between; /* Ensures space between the two sections */
+    }
+
+    .contact-form, .contact-info {
+        width: 48%; 
+    }
+
+    .contact-form {
+        margin-right: 2%; /* Adds some spacing between the two columns */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 60px;
+    }
+
+    .contact-form, .contact-info {
+        width: 48%;
+    }
+}
+
+/* Success message style */
+.alert-success {
+    color: #4caf50;
+    background-color: #d4edda;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Error message style */
+.alert-error {
+    color: #e74c3c;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+}
