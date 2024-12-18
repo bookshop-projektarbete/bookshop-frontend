@@ -8,11 +8,8 @@
 
 /* PP-css */
 
-span, 
-p,
-h4 {
+* {
     font-family: "Inclusive Sans", sans-serif;
-    font-size: 13px;
 }
 
 #pp-content-wrapper {
