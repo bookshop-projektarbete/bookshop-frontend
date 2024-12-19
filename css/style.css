@@ -50,22 +50,20 @@ li {
 /*Styling header*/
 header {
   background-color: var(--orange);
-  height: 20vh;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 10px;
+  padding: 12px 24px;
 }
 
 #logo-boklusen {
-  height: 12vh;
-  margin-left: 60px;
+  height: 72px;
+  margin-left: 0;
 }
 
 #logo-cart {
-  height: 4vh;
-  margin-right: 60px;
+  height: 38px;
+  margin-right: 0;
 }
 
 /*Styling footer*/
@@ -116,7 +114,7 @@ footer h3 {
 }
 
 #logo-footer {
-  height: 10vh;
+  height: 92px;
   padding-right: 50px;
 }
 
@@ -185,6 +183,7 @@ button:hover {
   margin: 0 auto;
   width: 100%;
 }
+
 
 /* Loader */
 .loader {
@@ -325,6 +324,7 @@ img {
 }
 
 
+
 /* Media Queries */
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -333,18 +333,26 @@ img {
     max-width: 1400px;
   }
 
+  #logo-boklusen {
+    margin-left: 36px;
+  }
+
+  #logo-cart {
+    margin-right: 36px;
+  }
+
   /*Styling search bar for home page*/
   #searchbar-container {
-   width: 40vw;
+    width: 40vw;
   }
 }
 
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 
-    /*Styling search bar for home page*/
-    #searchbar-container {
-      width: 30vw;
-    }
+  /*Styling search bar for home page*/
+  #searchbar-container {
+    width: 30vw;
   }
+}

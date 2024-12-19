@@ -21,6 +21,10 @@
     font-size: 20px;
 }
 
+#pp-loading-msg {
+    font-size: 25px;
+}
+
 #pp-main {
     display: flex;
     flex-wrap: wrap;

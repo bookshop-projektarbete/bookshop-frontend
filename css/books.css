@@ -21,6 +21,9 @@
   border-radius: 4px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .book-card:hover {
@@ -32,9 +35,13 @@
   padding: 10px;
 }
 
-img {
-  width: 163px;
+.img-wrapper img {
   border-radius: 2px 2px 0 0;
+  max-width: 100%;
+  max-height: 265px;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 10 / 16;
 }
 
 .book-title,
@@ -57,6 +64,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .book-price {
@@ -84,4 +92,10 @@ img {
 /* Hidden */
 .hidden {
   display: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: black;
 }
