@@ -48,6 +48,11 @@ function displayBookData(book) {
     document.getElementById('pp-price').innerHTML = `${book.price} SEK`;
     
     document.getElementById('pp-in-stock').innerHTML = `${book.stock}st i lager`;
+
+    const addToCartBtn = document.getElementById('pp-add-button');
+    addToCartBtn.addEventListener('click', () => {
+    addToCart(book);
+});
 };
 
 const addToCart = (book) => {
@@ -55,26 +60,21 @@ const addToCart = (book) => {
         console.error('Invalid book object:', book);
         return;
     }
-
+    
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+    
     const bookExists = cart.some(item => item._id === book._id);
     if (bookExists) {
         alert('This book is already in your cart!');
         return;
     }
-
+    
     cart.push(book);
-
+    
     localStorage.setItem('cart', JSON.stringify(cart));
-
+    
     alert(`${book.title} has been added to your cart!`);
 };
-
-const addToCartBtn = document.getElementById('pp-add-button');
-addToCartBtn.addEventListener('click', () => {
-    addToCart(book);
-});
 
 // Only display data if bookId is valid
 if (bookId) {
