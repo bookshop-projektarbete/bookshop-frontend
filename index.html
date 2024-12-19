@@ -27,6 +27,60 @@
       </button>
     </div>
 
+    <!-- Filter -->
+    <div id="filter-container">
+      <form class="dropdown" id="filterDropdown">
+        <button type="button" class="dropbtn" id="filterBtn" onclick="dropdownFunction('dropdownHeaders')">Filter</button>
+        <div class="dropdown-content" id="dropdownHeaders">
+
+            <button type="button" class="dropbtn" onclick="dropdownFunction('genreDropdown')">Genre</button>
+            <div class="dropdown-content" id="genreDropdown">
+                <button type="button" id="checkAllBtn">select all</button>
+                <button type="button" id="resetBtn">deselect all</button><br>
+            </div><br>
+
+            <button type="button" class="dropbtn" onclick="dropdownFunction('authorDropdown')">Författare</button>
+            <div class="dropdown-content" id="authorDropdown">
+                <input type="radio" class="filterInput" id="allAuthors" name="authorChoice" value="allAuthors" checked>
+                <label for="allAuthors" class="filterLabel">Inget val</label><br>
+
+                <input type="radio" class="filterInput" id="a-z" name="authorChoice" value="a-z">
+                <label for="a-z" class="filterLabel">A-Ö</label><br>
+
+                <input type="radio" class="filterInput" id="z-a" name="authorChoice" value="z-a" >
+                <label for="z-a" class="filterLabel">Ö-A</label><br>
+            </div><br>
+
+            <button type="button" class="dropbtn" onclick="dropdownFunction('publicationDateDropdown')">Utgivningsdatum</button>
+            <div class="dropdown-content" id="publicationDateDropdown">
+                <input type="radio" class="filterInput" id="allPubDate" name="publicationDateChoice" value="allPubDate" checked>
+                <label for="allPubDate" class="filterLabel">Inget val</label><br>
+
+                <input type="radio" class="filterInput" id="newest" name="publicationDateChoice" value="newest">
+                <label for="newest" class="filterLabel">Nyaste</label><br>
+
+                <input type="radio" class="filterInput" id="oldest" name="publicationDateChoice" value="oldest">
+                <label for="oldest" class="filterLabel">Äldsta</label><br>
+            </div><br>
+
+            <button type="button" class="dropbtn" onclick="dropdownFunction('priceDropdown')">Pris</button>
+            <div class="dropdown-content" id="priceDropdown">
+                <input type="radio" class="filterInput" id="allPrice" name="priceChoice" value="allPrice" checked>
+                <label for="allPrice" class="filterLabel">Inget val</label><br>
+
+                <input type="radio" class="filterInput" id="lowest" name="priceChoice" value="lowest">
+                <label for="lowest" class="filterLabel">Låg-hög</label><br>
+
+                <input type="radio" class="filterInput" id="highest" name="priceChoice" value="highest">
+                <label for="highest" class="filterLabel">Högt-lågt</label><br>
+            </div><br><br>
+
+            <button type="reset" id="resetAllBtn">Rensa alla filter</button><br>
+            <button type="button" id="searchBtn" onclick="searchFunction()">Sök</button>
+        </div>
+      </form>
+    </div>
+
     <!-- Loader -->
     <div class="loader hidden">
       <img src="./icons/book-loader.gif" alt="Book Loading Animation">
@@ -39,5 +93,6 @@
   <!--To get footer from footer.js-->
   <script src="scripts/footer.js"></script>
   <script src="scripts/script.js"></script>
+  <script src="scripts/filter.js"></script>
 </body>
 </html>
