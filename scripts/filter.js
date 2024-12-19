@@ -84,13 +84,6 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 });
 
 // check choosen filters
-function searchFunction() {
-    console.log(searchResults('genreChoice'));
-    console.log(searchResults('authorChoice'));
-    console.log(searchResults('publicationDateChoice'));
-    console.log(searchResults('priceChoice'));
-};
-
 function searchResults(name) {
     const nameArray = document.getElementsByName(name);
     return Array.from(nameArray)
@@ -118,6 +111,11 @@ function authorList() {
     let list = [];
     for (let i = 0; i < data.length; i++) {
         list.push(data[i].author);
+
+        // const sepName = value.split(' ');
+        // sepName.unshift(sepName.at(-1)+',');
+        // sepName.pop();
+        // const newName = sepName.join(' ');
     };
     const uniqueList = new Set(list.sort());
     return uniqueList;
