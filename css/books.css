@@ -93,3 +93,9 @@
 .hidden {
   display: none;
 }
+
+/* Links */
+a {
+  text-decoration: none;
+  color: black;
+}

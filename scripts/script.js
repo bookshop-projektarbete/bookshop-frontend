@@ -13,7 +13,7 @@ const fetchBooksFromAPI = async () => {
 const addToCart = (book) => {
   // Fetch books from localStorage
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+  console.log(book);
   // Check if book exists in localStorage
   const bookExists = cart.some(item => item._id === book._id);
   if (bookExists) {
@@ -55,10 +55,14 @@ const createBookCard = (book) => {
   bookInfoWrapper.classList.add('book-info-wrapper');
   const bookTitle = document.createElement('h2');
   bookTitle.classList.add('book-title');
-  bookTitle.textContent = book.title; /* <--- Connect to db */
+/*   bookTitle.textContent = book.title; */ /* <--- Connect to db */
+  const link = document.createElement('a');
+  link.href = `productpage.html?id=${book._id}`;
+  link.textContent = book.title;
   const bookAuthor = document.createElement('h3');
   bookAuthor.classList.add('book-author');
   bookAuthor.textContent = book.author; /* <--- Connect to db */
+  bookTitle.appendChild(link);
   bookInfoWrapper.appendChild(bookTitle);
   bookInfoWrapper.appendChild(bookAuthor);
 
